@@ -6,7 +6,7 @@ import { Button } from './ui/button';
 
 export const Navbar = () => {
   return (
-    <header className="fixed left-0 top-0 z-50 flex h-16 w-screen items-center justify-between px-48 shadow-sm">
+    <header className="dark:bg-background fixed left-0 top-0 z-50 flex h-16 w-screen items-center justify-between bg-white px-48 shadow-sm">
       <div className="flex items-center gap-10">
         <Link to="/" className="text-2xl font-bold">
           CodeBlame

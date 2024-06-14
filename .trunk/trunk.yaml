@@ -34,6 +34,7 @@ lint:
         - '**/build/**'
         - '**/public/**'
         - '**/routeTree.gen.ts'
+        - '**/src/components/ui/*'
 actions:
   enabled:
     - trunk-announce

@@ -12,7 +12,7 @@ import { prism } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 import { useTheme } from './theme/ThemeProvider';
 
-export const CodeQuestionCard = () => {
+export const CodeQuestionCard = ({ className }: { className?: string }) => {
   const { theme } = useTheme();
 
   const codeString = `<Card>
@@ -30,7 +30,7 @@ export const CodeQuestionCard = () => {
 </Card>`;
 
   return (
-    <Card className={cn('w-[400px]')}>
+    <Card className={cn('w-[400px]', className)}>
       <CardHeader>
         <CardTitle>ShadCn 이렇게 쓰는거 맞나요?</CardTitle>
       </CardHeader>
