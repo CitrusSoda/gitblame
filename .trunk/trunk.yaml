@@ -26,6 +26,14 @@ lint:
     - trivy@0.52.1
     - trufflehog@3.78.1
     - yamllint@1.35.1
+  ignore:
+    - linters: [ALL]
+      paths:
+        - '**/node_modules/**'
+        - '**/dist/**'
+        - '**/build/**'
+        - '**/public/**'
+        - '**/routeTree.gen.ts'
 actions:
   enabled:
     - trunk-announce

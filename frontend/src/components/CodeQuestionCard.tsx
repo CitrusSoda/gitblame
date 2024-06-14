@@ -30,7 +30,7 @@ export const CodeQuestionCard = () => {
 </Card>`;
 
   return (
-    <Card>
+    <Card className={cn('w-[400px]')}>
       <CardHeader>
         <CardTitle>ShadCn 이렇게 쓰는거 맞나요?</CardTitle>
       </CardHeader>
@@ -38,13 +38,13 @@ export const CodeQuestionCard = () => {
         <SyntaxHighlighter
           language="jsx"
           style={theme === 'dark' ? atomDark : prism}
-          className={cn('line-clamp-3')}
+          className={cn('!line-clamp-3')}
         >
           {codeString}
         </SyntaxHighlighter>
       </CardContent>
-      <CardFooter>
-        <p className="line-clamp-3">
+      <CardFooter className="h-[100px]">
+        <p className="line-clamp-4">
           이거 해봤는데 이렇게 됐어요 Lorem ipsum dolor, sit amet consectetur
           adipisicing elit. Voluptates modi repudiandae, cumque ratione quaerat
           quam? Reiciendis aperiam distinctio commodi laudantium. Ullam
