@@ -20,13 +20,13 @@ export const Navbar = () => {
         <div className="flex items-center gap-8">
           <Link
             to="/blame"
-            className="hover:text-foreground dark:hover:text-foreground text-foreground/60 dark:text-foreground/30 text-lg font-medium"
+            className="hover:text-foreground dark:hover:text-foreground text-foreground/60 dark:text-foreground/30 [&.active]:text-foreground text-lg font-medium"
           >
             Blame
           </Link>
           <Link
             to="/about"
-            className="hover:text-foreground dark:hover:text-foreground text-foreground/60 dark:text-foreground/30 text-lg font-medium"
+            className="hover:text-foreground dark:hover:text-foreground text-foreground/60 dark:text-foreground/30 [&.active]:text-foreground text-lg font-medium"
           >
             About
           </Link>

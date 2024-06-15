@@ -13,7 +13,9 @@ export const Route = createFileRoute('/')({
           분석해보세요!
         </p>
         <Button
-          className={cn('flex w-48 items-center justify-center gap-x-2 py-4')}
+          className={cn(
+            'flex w-48 items-center justify-center gap-x-2 py-4 text-lg',
+          )}
           asChild
         >
           <Link to="/blame">
