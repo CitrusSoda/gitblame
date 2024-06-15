@@ -1,11 +1,13 @@
 {
   "name": "gitblame",
-  "module": "index.ts",
+  "module": "server/index.ts",
   "type": "module",
   "scripts": {
+    "start": "bun server/index.ts",
     "dev": "bun --watch server/index.ts"
   },
   "devDependencies": {
+    "@flydotio/dockerfile": "^0.5.7",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@trunkio/launcher": "^1.3.1",
     "@types/bun": "latest",

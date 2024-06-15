@@ -12,6 +12,5 @@ export const codeQuestion = new Hono().get('/', (c) => {
 
   return c.json({
     message: 'You are logged in!',
-    userId: auth.userId,
   });
 });
