@@ -14,6 +14,7 @@ import { Route as rootRoute } from './routes/__root'
 import { Route as AboutImport } from './routes/about'
 import { Route as AuthenticatedImport } from './routes/_authenticated'
 import { Route as IndexImport } from './routes/index'
+import { Route as AuthenticatedCodequestionImport } from './routes/_authenticated/codequestion'
 import { Route as AuthenticatedBlameImport } from './routes/_authenticated/blame'
 
 // Create/Update Routes
@@ -31,6 +32,11 @@ const AuthenticatedRoute = AuthenticatedImport.update({
 const IndexRoute = IndexImport.update({
   path: '/',
   getParentRoute: () => rootRoute,
+} as any)
+
+const AuthenticatedCodequestionRoute = AuthenticatedCodequestionImport.update({
+  path: '/codequestion',
+  getParentRoute: () => AuthenticatedRoute,
 } as any)
 
 const AuthenticatedBlameRoute = AuthenticatedBlameImport.update({
@@ -70,6 +76,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedBlameImport
       parentRoute: typeof AuthenticatedImport
     }
+    '/_authenticated/codequestion': {
+      id: '/_authenticated/codequestion'
+      path: '/codequestion'
+      fullPath: '/codequestion'
+      preLoaderRoute: typeof AuthenticatedCodequestionImport
+      parentRoute: typeof AuthenticatedImport
+    }
   }
 }
 
@@ -79,6 +92,7 @@ export const routeTree = rootRoute.addChildren({
   IndexRoute,
   AuthenticatedRoute: AuthenticatedRoute.addChildren({
     AuthenticatedBlameRoute,
+    AuthenticatedCodequestionRoute,
   }),
   AboutRoute,
 })
@@ -102,7 +116,8 @@ export const routeTree = rootRoute.addChildren({
     "/_authenticated": {
       "filePath": "_authenticated.tsx",
       "children": [
-        "/_authenticated/blame"
+        "/_authenticated/blame",
+        "/_authenticated/codequestion"
       ]
     },
     "/about": {
@@ -110,6 +125,10 @@ export const routeTree = rootRoute.addChildren({
     },
     "/_authenticated/blame": {
       "filePath": "_authenticated/blame.tsx",
+      "parent": "/_authenticated"
+    },
+    "/_authenticated/codequestion": {
+      "filePath": "_authenticated/codequestion.tsx",
       "parent": "/_authenticated"
     }
   }

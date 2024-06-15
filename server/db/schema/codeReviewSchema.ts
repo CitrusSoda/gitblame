@@ -1,8 +1,8 @@
 import { integer, pgTable, serial, text, timestamp } from 'drizzle-orm/pg-core';
 
-export const postsTable = pgTable('posts_table', {
+export const codeReviewTable = pgTable('code_review_table', {
   id: serial('id').primaryKey(),
-  userId: integer('user_id').notNull(),
+  userId: text('user_id').notNull(),
   title: text('title').notNull(),
   description: text('description').notNull(),
   code: text('code').notNull(),

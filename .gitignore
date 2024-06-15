@@ -176,3 +176,6 @@ dist
 
 ## Drizzle migration folder
 drizzle
+
+## Request test file
+request.http

@@ -10,14 +10,6 @@ import {
   PaginationPrevious,
 } from '@/components/ui/pagination';
 import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from '@/components/ui/sheet';
-import {
   Table,
   TableBody,
   TableCell,
@@ -25,6 +17,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
+import { Link } from '@tanstack/react-router';
 import { createFileRoute } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/_authenticated/blame')({
@@ -32,21 +25,9 @@ export const Route = createFileRoute('/_authenticated/blame')({
     <div className="container w-full overflow-hidden">
       <div className="my-10 flex items-center justify-between">
         <h1 className="text-2xl font-bold">최근 질문들</h1>
-        <Sheet>
-          <SheetTrigger asChild>
-            <Button>질문 작성</Button>
-          </SheetTrigger>
-          <SheetContent side="left" className="w-[70%] sm:max-w-none">
-            <SheetHeader>
-              <SheetTitle>문제점이 무엇인가요?</SheetTitle>
-              <SheetDescription>
-                This action cannot be undone. This will permanently delete your
-                account and remove your data from our servers.
-              </SheetDescription>
-            </SheetHeader>
-            <h1>Hello World!</h1>
-          </SheetContent>
-        </Sheet>
+        <Button asChild>
+          <Link to="/codequestion">질문 작성</Link>
+        </Button>
       </div>
       <div className="flex gap-x-4">
         <CodeQuestionCard />
