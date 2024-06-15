@@ -1,5 +1,6 @@
 import { getAuth } from '@hono/clerk-auth';
 import { zValidator } from '@hono/zod-validator';
+import { desc } from 'drizzle-orm';
 import { Hono } from 'hono';
 import { z } from 'zod';
 
@@ -13,18 +14,13 @@ const codeQuestionSchema = z.object({
 });
 
 export const codeQuestion = new Hono()
-  .get('/', (c) => {
-    const auth = getAuth(c);
-
-    if (!auth?.userId) {
-      return c.json({
-        message: 'You are not logged in.',
-      });
-    }
-
+  .get('/', async (c) => {
+    const result = await db
+      .select()
+      .from(codeReviewTable)
+      .orderBy(desc(codeReviewTable.createdAt));
     return c.json({
-      message: 'You are logged in!',
-      userId: auth.userId,
+      result,
     });
   })
   .post('/', zValidator('json', codeQuestionSchema), async (c) => {
