@@ -1,11 +1,11 @@
 import { api } from '@/lib/api';
 import { FieldApi, useForm } from '@tanstack/react-form';
 import { useNavigate } from '@tanstack/react-router';
+import CodeMirror from '@uiw/react-codemirror';
 
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
-import { Textarea } from './ui/textarea';
 
 function FieldInfo({ field }: { field: FieldApi<any, any, any, any> }) {
   return (
@@ -71,12 +71,12 @@ export const CodeQuestionForm = () => {
               return (
                 <>
                   <Label htmlFor={field.name}>도움 받을 코드</Label>
-                  <Textarea
+                  <CodeMirror
                     id={field.name}
                     name={field.name}
                     value={field.state.value}
                     onBlur={field.handleBlur}
-                    onChange={(e) => field.handleChange(e.target.value)}
+                    onChange={(e) => field.handleChange(e)}
                   />
                   <FieldInfo field={field} />
                 </>

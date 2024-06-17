@@ -20,6 +20,7 @@
     "@tanstack/react-router": "^1.36.3",
     "@tanstack/router-devtools": "^1.36.3",
     "@tanstack/router-vite-plugin": "^1.37.0",
+    "@uiw/react-codemirror": "^4.22.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.394.0",
